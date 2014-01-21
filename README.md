@@ -27,8 +27,7 @@ npm install --msvs_version=2012
 
 ## Project structure
 
-[![Initial plan sketch](https://github.com/paazmaya/matsumura-rohai/blob/master/initial-plan-thumb.jpg)](https://github.com/paazmaya/matsumura-rohai/blob/master/initial-plan.jpg)
-
+[![Initial plan sketch](https://raw.github.com/paazmaya/matsumura-rohai/master/initial-plan-thumb.jpg)](https://raw.github.com/paazmaya/matsumura-rohai/master/initial-plan.jpg)
 
 
 
