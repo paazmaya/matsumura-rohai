@@ -2,9 +2,14 @@
 
 > Translate strings found in PO files
 
-The name for this project is honouring one great [bushi]() who lived in Okinawa, Japan, and a [Karate Kata]() named after him.
+The name for this project is honouring one great [bushi, Matsumura 
+Sokon](http://en.wikipedia.org/wiki/Matsumura_S%C5%8Dkon), who lived 
+in Okinawa, Japan, and a [Karate Kata](http://en.wikipedia.org/wiki/Karate_kata) named after him.
 
-Matsumura Sokon lived around ~1800 and what is considered one of his contribution of Karate, is a predefined form called _Matsumura Rohai_, also known as _Koshiki Rohai_ or _Matsumura no Rohai_, depending on who is writing it.
+Matsumura Sokon lived around ~1800 and was one very important contributor 
+to the local martial art, which we today know as Karate and Ryukyu Kobujutsu.
+The kata named after him is called _Matsumura Rohai_, also known 
+as _Koshiki Rohai_ or _Matsumura no Rohai_, depending on who is writing it.
 
 
 ## Installation
@@ -19,7 +24,7 @@ npm install --msvs_version=2012
 ## Third party tools
 
 * [Zepto](http://zeptojs.com/) taking care of the Ajax
-* [Pure CSS](http://purecss.io/) for making things look good by default
+* [Bootstrap](http://getbootstrap.com/) for making things look good by default
 * [Microsoft Translate API](http://msdn.microsoft.com/en-us/library/dd576287.aspx) via [mstranslator for node.js](https://github.com/nanek/mstranslator)
 * PO and MO file handling via [node-gettext](https://github.com/andris9/node-gettext)
 * [Express](http://expressjs.com/) for making pages to route in certain methods
