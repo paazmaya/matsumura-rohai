@@ -35,4 +35,8 @@ npm install --msvs_version=2012
 [![Initial plan sketch](https://raw.github.com/paazmaya/matsumura-rohai/master/initial-plan-thumb.jpg)](https://raw.github.com/paazmaya/matsumura-rohai/master/initial-plan.jpg)
 
 
+## License
 
+Copyright (c) [Juga Paazmaya](http://paazmaya.com)
+
+Licensed under the [MIT license](https://github.com/paazmaya/matsumura-rohai/blob/master/LICENSE-MIT).

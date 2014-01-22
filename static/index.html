@@ -13,20 +13,34 @@
   <section>
     <table class="table">
       <thead>
-        <tr>
-          <th></th>
-        </tr>
       </thead>
       <tbody>
       </tbody>
     </table>
   </section>
-  
-  <script id="tmpl_table_row" type="text/mustache">
-    <tr>
-      <td>
-      </td>
+
+  <script id="tmpl_table_header" type="template/mustache">
+      <tr>
+         <th>ID</th>
+          {{ #languages }}
+              <th data-lang="{{ lang }}">{{ language }}</th>
+          {{ /languages }}
+      </tr>
+  </script>
+
+  <script id="tmpl_table_row" type="template/mustache">
+    <tr data-id="{{ id }}">
+        <td>{{ id }}</td>
+        {{ #texts }}
+          <td data-lang="{{ lang }}">{{ text }}</td>
+        {{ /texts }}
     </tr>
+  </script>
+  
+  <script id="text_input" type="template/mustache">
+    <div class="form">
+      <input type="text" value="{{ text }}" name="{{ name }}" lang="{{ lang }}" spellcheck="true" />
+    </div>
   </script>
   
   <script src="js/zepto.js"></script>
