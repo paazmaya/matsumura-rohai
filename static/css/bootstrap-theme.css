@@ -36,7 +36,6 @@
 
 .btn-default {
     border-color: #dbdbdb;
-    border-color: #ccc;
     background-image: -webkit-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
     background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e0e0e0));
     background-image: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
@@ -78,22 +77,22 @@
 
 .btn-success {
     border-color: #3e8f3e;
-    background-image: -webkit-linear-gradient(top, #5cb85c 0%, #419641 100%);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#5cb85c), to(#419641));
-    background-image: linear-gradient(to bottom, #5cb85c 0%, #419641 100%);
+    background-image: -webkit-linear-gradient(top, #5cb85c 0%, #3C962E 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#5cb85c), to(#3C962E));
+    background-image: linear-gradient(to bottom, #5cb85c 0%, #3C962E 100%);
     background-repeat: repeat-x;
 }
 
 .btn-success:hover,
 .btn-success:focus {
-    background-color: #419641;
+    background-color: #3c962e;
     background-position: 0 -15px;
 }
 
 .btn-success:active,
 .btn-success.active {
     border-color: #3e8f3e;
-    background-color: #419641;
+    background-color: #3C962E;
 }
 
 .btn-warning {
@@ -234,7 +233,7 @@
 }
 
 .alert-success {
-    border-color: #b2dba1;
+    border-color: #3C962E;
     background-image: -webkit-linear-gradient(top, #dff0d8 0%, #c8e5bc 100%);
     background-image: -webkit-gradient(linear, left top, left bottom, from(#dff0d8), to(#c8e5bc));
     background-image: linear-gradient(to bottom, #dff0d8 0%, #c8e5bc 100%);

@@ -2064,9 +2064,6 @@ input[type="search"] {
 input[type="radio"],
 input[type="checkbox"] {
     margin: 4px 0 0;
-    margin-top: 1px \9;
-    /* IE8-9 */
-
     line-height: normal;
 }
 
@@ -6658,7 +6655,6 @@ button.close {
     height: 10px;
     border: 1px solid #ffffff;
     border-radius: 10px;
-    background-color: #000 \9;
     background-color: rgba(0, 0, 0, 0);
     text-indent: -999px;
     cursor: pointer;
