@@ -23,18 +23,20 @@
       <tr>
          <th>ID</th>
           {{ #languages }}
-              <th data-lang="{{ lang }}">{{ language }}</th>
+              <th data-lang="{{ lang }}">{{ lang }} ({{ values }})</th>
           {{ /languages }}
       </tr>
   </script>
 
   <script id="tmpl_table_row" type="template/mustache">
-    <tr data-id="{{ id }}">
+    {{ #translations }}
+      <tr data-id="{{ id }}">
         <td>{{ id }}</td>
-        {{ #texts }}
-          <td data-lang="{{ lang }}">{{ text }}</td>
-        {{ /texts }}
-    </tr>
+      {{ #texts }}
+        <td data-lang="{{ lang }}">{{ text }}</td>
+      {{ /texts }}
+      </tr>
+    {{ /translations }}
   </script>
   
   <script id="text_input" type="template/mustache">
@@ -43,8 +45,9 @@
     </div>
   </script>
   
-  <script src="js/zepto.js"></script>
+  <script src="js/jquery.js"></script>
   <script src="js/bootstrap.js"></script>
+  <script src="js/hogan.js"></script>
   <script src="js/bunkai-kumite.js"></script>
 </body>
 </html>

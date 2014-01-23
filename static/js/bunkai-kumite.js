@@ -60,6 +60,22 @@
         $td.remove('.form');
         $td.text(content);
       }, 'json');
+    },
+    
+    fetchInitialData: function () {
+      $.get('/initial-data', function (incoming, textStatus) {
+        var header = $('#tmpl_table_header');
+        var row = $('#tmpl_table_row');
+        var hH = Hogan.compile(header.html());
+        var rH = Hogan.compile(row.html());
+        
+        console.log(row);
+        console.log(row.html());
+        
+        $('thead').html(hH.render({ languages: incoming.languages }));
+        $('tbody').html(rH.render({ translations: incoming.translations }));
+      
+      }, 'json');
     }
 
   };
@@ -68,5 +84,7 @@
     event.preventDefault();
     console.log('Clicked. Now what?');
   });
+  
+  Matsumura.fetchInitialData();
   
 }());
