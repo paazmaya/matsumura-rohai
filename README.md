@@ -24,7 +24,7 @@ npm install --msvs_version=2012
 ## Third party tools
 
 * [Zepto](http://zeptojs.com/) taking care of the Ajax
-* [Bootstrap](http://getbootstrap.com/) for making things look good by default
+* [Topcoat](http://topcoat.io) for making things look good by default
 * [Microsoft Translate API](http://msdn.microsoft.com/en-us/library/dd576287.aspx) via [mstranslator for node.js](https://github.com/nanek/mstranslator)
 * PO and MO file handling via [node-gettext](https://github.com/andris9/node-gettext)
 * [Express](http://expressjs.com/) for making pages to route in certain methods
