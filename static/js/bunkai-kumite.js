@@ -4,6 +4,7 @@
  */
 
 (function () {
+  'use strict';
   var Matsumura = {
 
     /**

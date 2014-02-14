@@ -5,7 +5,8 @@
   "homepage": "https://github.com/paazmaya/matsumura-rohai",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "node node_modules/eslint/bin/eslint.js --config eslint.json -f compact index.js static/js/bunkai-kumite.js"
   },
   "keywords": [
     "translation",
@@ -33,7 +34,7 @@
   ],
   "dependencies": {
     "mstranslator": "^0.1",
-    "node-gettext": "^0.24",
+    "node-gettext": "^0.2",
     "express": "^3.4"
   }
 }

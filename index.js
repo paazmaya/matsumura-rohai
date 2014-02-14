@@ -2,7 +2,7 @@
  * Matsumura Rohai
  * Translate PO files with the help of Microsoft Translate API
  */
-
+'use strict';
 
 
 var express = require('express');
@@ -14,8 +14,6 @@ var translateClient = new MsTranslator({
   client_id: '',
   client_secret: ''
 });
-
-
 
 // When was the token last time received, unix time
 var lastTokenTime = 0;
@@ -44,47 +42,46 @@ var translate = function (from, to, text, translateCallback) {
   }
 };
 
-
-
 var app = express();
 app.use(express.logger());
 app.use(express.json());
 app.use(express.static(__dirname + '/static'));
 
-
 app.post('/translate', function(req, res) {
-  req.param('from')
+  var from = req.param('from');
+  var to = req.param('to');
+  var content = req.param('content');
 
   res.set('Content-Type', 'application/json');
-  translate(req.param('from'), req.param('to'), req.param('content'), function (translated) {
-    res.send('{"translated": "' + translated + '"}');
+  translate(from, to, content, function (translated) {
+    res.send(JSON.stringify({translated: translated}));
   });
 });
 
 app.post('/save-translation', function(req, res) {
-  res.send('{"hello": "world"}');
+  res.send(JSON.stringify({hello: 'world'}));
 });
 
 // ID could be SHA1 of the Engineering English version, thus one word.
 
-var json = {
-  "languages": [
+var initialData = {
+  languages: [
     {
-      "lang": "en",
-      "values": 4
+      lang: 'en',
+      values: 4
     }
   ],
-  "translations": [
+  translations: [
     {
-      "id": "aeiou12345658",
-      "texts": [
+      id: 'aeiou12345658',
+      texts: [
         {
-          "lang": "en",
-          "text": ""
+          lang: 'en',
+          text: ''
         },
         {
-          "lang": "fi",
-          "text": ""
+          lang: 'fi',
+          text: ''
         }
       ]
     }
@@ -93,7 +90,7 @@ var json = {
 
 app.get('/initial-data', function(req, res) {
   res.set('Content-Type', 'application/json');
-  res.send(JSON.stringify(json));
+  res.send(JSON.stringify(initialData));
 });
 
 
