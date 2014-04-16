@@ -35,6 +35,6 @@
   "dependencies": {
     "mstranslator": "^0.1",
     "node-gettext": "^0.2",
-    "express": "^3.4"
+    "express": "^4.0"
   }
 }
