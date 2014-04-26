@@ -6,13 +6,17 @@
 
 
 var express = require('express');
+var morgan = require('morgan'); // logger
+var bodyParser = require('body-parser');
+var serveStatic = require('serve-static');
+
 var Gettext = require('node-gettext');
 var MsTranslator = require('mstranslator');
 
 var gt = new Gettext();
 var translateClient = new MsTranslator({
-  client_id: '',
-  client_secret: ''
+  client_id: process.env.MS_TRANSLATE_API_KEY || '',
+  client_secret: process.env.MS_TRANSLATE_API_SECRET || ''
 });
 
 // When was the token last time received, unix time
@@ -43,9 +47,9 @@ var translate = function (from, to, text, translateCallback) {
 };
 
 var app = express();
-app.use(express.logger());
-app.use(express.json());
-app.use(express.static(__dirname + '/static'));
+app.use(morgan());
+app.use(bodyParser());
+app.use(serveStatic(__dirname + '/static', {maxAge: 1000 * 60 * 60 * 24 * 7})); // A week in milliseconds
 
 app.post('/translate', function(req, res) {
   var from = req.param('from');
@@ -95,5 +99,5 @@ app.get('/initial-data', function(req, res) {
 
 
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 

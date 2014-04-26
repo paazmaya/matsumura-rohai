@@ -21,6 +21,14 @@ With different options to `--msvs_version`, one might succeed. Such options are 
 npm install --msvs_version=2012
 ```
 
+## Usage
+
+```sh
+export MS_TRANSLATE_API_KEY=****
+export MS_TRANSLATE_API_SECRET=****
+node index.js
+```
+
 ## Third party tools
 
 * [Zepto](http://zeptojs.com/) taking care of the Ajax
