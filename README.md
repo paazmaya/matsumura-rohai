@@ -31,11 +31,11 @@ node index.js
 
 ## Third party tools
 
-* [Zepto](http://zeptojs.com/) taking care of the Ajax
-* [Topcoat](http://topcoat.io) for making things look good by default
+* [jQuery](http://jquery.com) taking care of the Ajax
+* [Bootstrap](http://getbootstrap.com/) for making things look good by default
 * [Microsoft Translate API](http://msdn.microsoft.com/en-us/library/dd576287.aspx) via [mstranslator for node.js](https://github.com/nanek/mstranslator)
 * PO and MO file handling via [node-gettext](https://github.com/andris9/node-gettext)
-* [Express](http://expressjs.com/) for making pages to route in certain methods
+* [Express](http://expressjs.com/) for making pages to route to certain methods
 * [Hogan.js](https://github.com/twitter/hogan.js) for rendering client side templates
 
 ## Project structure
