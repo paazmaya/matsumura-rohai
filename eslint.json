@@ -47,7 +47,7 @@
     "no-fallthrough": 2,
     "no-floating-decimal": 0,
     "no-func-assign": 2,
-    "no-global-strict": 0,
+    "global-strict": 2,
     "no-implied-eval": 2,
     "no-invalid-regexp": 2,
     "no-iterator": 2,
@@ -107,7 +107,7 @@
     "valid-jsdoc": 1,
     "wrap-iife": 0,
     "wrap-regex": 0,
-    
+
     "no-undefined": 1,
     "no-mixed-spaces-and-tabs": 2,
     "no-trailing-spaces": 2,
