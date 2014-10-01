@@ -40,6 +40,11 @@ var args = yargs.usage(pkg.name + ' - ' + pkg.description)
   .describe('license', 'Show complete license information')
   .alias('port', 'p')
   .describe('port', 'Port in which the local server will be started, defaults to ' + defaultPort)
+  .alias('key', 'k')
+  .describe('key', 'Microsoft Translate API key')
+  .alias('secret', 's')
+  .describe('secret', 'Microsoft Translate API secret')
+  .usage('Use example: node index.js serve --key 24242445 --secret 3523552')
   .argv;
 
 util.log(util.inspect(args));
@@ -50,6 +55,13 @@ if (args.license) {
   util.puts(license);
 }
 else if (args._.indexOf('serve') !== -1) {
+  if (!args.key || !args.secret || typeof args.key !== 'string' || typeof args.secret !== 'string') {
+    util.error('Microsoft Translate API key/secret were not defined');
+    process.exit(-1);
+  }
+  global.api_key = args.key;
+  global.api_secret = args.secret;
+  
   // Start Express server
   var server = require('./lib/server.js');
   var port = args.port || defaultPort;
