@@ -44,6 +44,8 @@
   "devDependencies": {
     "gulp": "~3.8.8",
     "gulp-eslint": "~0.1.8",
-    "gulp-nodeunit-runner": "~0.2.2"
+    "gulp-nodeunit-runner": "~0.2.2",
+    "gulp-qunit": "~0.3.3",
+    "qunitjs": "~1.15.0"
   }
 }

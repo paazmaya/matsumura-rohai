@@ -12,6 +12,8 @@ var eslint = require('gulp-eslint');
 // https://github.com/baer/gulp-nodeunit-runner
 var nodeunitRunner = require("gulp-nodeunit-runner");
 
+// https://github.com/jonkemp/gulp-qunit
+var qunit = require('gulp-qunit');
 
 gulp.task('lint', function () {
   gulp.src(['*.js', 'lib/*.js', 'static/js/bunkai-kumite.js', '!node_modules/**'])
@@ -22,4 +24,7 @@ gulp.task('lint', function () {
 gulp.task('test', function () {
   gulp.src(['tests/nodeunit/*_spec.js'])
     .pipe(nodeunitRunner({reporter: 'default'}));
+
+  gulp.src('tests/qunit/test-runner.html')
+    .pipe(qunit());
 });
