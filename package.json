@@ -40,5 +40,10 @@
     "node-gettext": "^0.2",
     "serve-static": "^1.6",
     "yargs": "^1.3"
+  },
+  "devDependencies": {
+    "gulp": "~3.8.8",
+    "gulp-eslint": "~0.1.8",
+    "gulp-nodeunit-runner": "~0.2.2"
   }
 }

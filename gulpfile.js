@@ -1,0 +1,25 @@
+/**
+ * Matsumura Rohai
+ * Translate PO files with the help of Microsoft Translate API
+ */
+'use strict';
+
+var gulp = require('gulp');
+
+// https://github.com/adametry/gulp-eslint
+var eslint = require('gulp-eslint');
+
+// https://github.com/baer/gulp-nodeunit-runner
+var nodeunitRunner = require("gulp-nodeunit-runner");
+
+
+gulp.task('lint', function () {
+  gulp.src(['*.js', 'lib/*.js', 'static/js/bunkai-kumite.js', '!node_modules/**'])
+    .pipe(eslint({config: 'eslint.json'}))
+    .pipe(eslint.format('stylish'));
+});
+
+gulp.task('test', function () {
+  gulp.src(['tests/nodeunit/*_spec.js'])
+    .pipe(nodeunitRunner({reporter: 'default'}));
+});
