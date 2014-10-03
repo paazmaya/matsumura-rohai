@@ -54,8 +54,6 @@
     "gulp-eslint": "~0.1",
     "gulp-mocha": "~1.1",
     "gulp-nodeunit-runner": "~0.2",
-    "gulp-qunit": "~0.3",
-    "mocha": "~1.21",
-    "qunitjs": "~1.15"
+    "mocha": "~1.21"
   }
 }

@@ -10,7 +10,7 @@
     /**
      * Create an input to a table cell if it does not already have it,
      * and set one time event handlers (enter/esc)
-     * @param {Zepto} $td A td element wrapped as a Zepto object
+     * @param {jQuery} $td A td element wrapped as a Zepto object
      */
     createInlineInput: function ($td) {
       var text = $.trim($td.text() || '');
@@ -26,6 +26,10 @@
       $td.attr('data-original', text);
     },
 
+    /**
+     *
+     * @param {jQuery.Event} event
+     */
     onInputKeyup: function (event) {
       console.dir(event);
       var $input = $(event.currentTarget);
@@ -62,20 +66,23 @@
         $td.text(content);
       }, 'json');
     },
-    
+
+    /**
+     * Gets initial data from back end and creates the table
+     */
     fetchInitialData: function () {
       $.get('/initial-data', function (incoming, textStatus) {
         var header = $('#tmpl_table_header');
         var row = $('#tmpl_table_row');
         var hH = Hogan.compile(header.html());
         var rH = Hogan.compile(row.html());
-        
+
         console.log(row);
         console.log(row.html());
-        
+
         $('thead').html(hH.render({ languages: incoming.languages }));
         $('tbody').html(rH.render({ translations: incoming.translations }));
-      
+
       }, 'json');
     }
 
@@ -85,7 +92,7 @@
     event.preventDefault();
     console.log('Clicked. Now what?');
   });
-  
+
   Matsumura.fetchInitialData();
-  
+
 }());
