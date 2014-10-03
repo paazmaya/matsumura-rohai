@@ -120,6 +120,7 @@
   "globals": {
     "$": false,
     "jQuery": false,
-    "Hogan": false
+    "Hogan": false,
+    "request": false
   }
 }

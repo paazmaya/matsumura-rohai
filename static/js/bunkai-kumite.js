@@ -59,19 +59,19 @@
         lang: lang,
         content: content
       };
-
-      $.post('/save-translation', data, function (incoming, textStatus) {
+      request.post('/save-translation').send(data).end(function(error, res) {
         // TODO: Perhaps should check what is the level of success?
         $td.remove('.form');
         $td.text(content);
-      }, 'json');
+
+      });
     },
 
     /**
      * Gets initial data from back end and creates the table
      */
     fetchInitialData: function () {
-      $.get('/initial-data', function (incoming, textStatus) {
+      request.get('/initial-data', function(res) {
         var header = $('#tmpl_table_header');
         var row = $('#tmpl_table_row');
         var hH = Hogan.compile(header.html());
@@ -80,10 +80,9 @@
         console.log(row);
         console.log(row.html());
 
-        $('thead').html(hH.render({ languages: incoming.languages }));
-        $('tbody').html(rH.render({ translations: incoming.translations }));
-
-      }, 'json');
+        $('thead').html(hH.render({ languages: res.body.languages }));
+        $('tbody').html(rH.render({ translations: res.body.translations }));
+      });
     }
 
   };
