@@ -2,96 +2,115 @@
  * Matsumura Rohai
  * Translate PO files with the help of Microsoft Translate API
  */
+'use strict';
 
-(function () {
-  'use strict';
+/**
+ * @param {HTMLDocument} doc
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/document
+ */
+(function (doc) {
   var Matsumura = {
 
     /**
      * Create an input to a table cell if it does not already have it,
      * and set one time event handlers (enter/esc)
-     * @param {jQuery} $td A td element wrapped as a Zepto object
+     * @param {HTMLElement} elem A td element wrapped as a jQuery object
+     * @returns {void}
+     * @see https://developer.mozilla.org/en-US/docs/Web/API/element
      */
-    createInlineInput: function ($td) {
-      var text = $.trim($td.text() || '');
-      var lang = $td.attr('data-lang');
-      var id = $td.parents('tr').attr('data-id');
+    createInlineInput: function createInlineInput(elem) {
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+      var text = (elem.textContent || '').trim();
+
+      var lang = elem.getAttribute('data-lang');
+      var id = elem.parents('tr').getAttribute('data-id');
 
       // insert input which is removed once its data has been sent via enter key
-      var tmpl = $('#text_input');
-      var html = Hogan.compile(tmpl.html(), { id: id, lang: lang, text: text });
+      var tmpl = doc.querySelector('#text_input');
+      var html = Hogan.compile(tmpl.innerHTML, { id: id, lang: lang, text: text });
 
       // Send if enter key comes up later, remove if esc.
-      $td.html(html).find('input').focus().on('keyup', this.onInputKeyup);
-      $td.attr('data-original', text);
+      elem.innerHTML = html;
+
+      var input = elem.querySelector('input');
+      input.focus();
+      input.addEventListener('keyup', this.onInputKeyup);
+
+      elem.setAttribute('data-original', text);
     },
 
     /**
      *
-     * @param {jQuery.Event} event
+     * @param {InputEvent} event Key event
+     * @returns {void}
+     * @see https://developer.mozilla.org/en-US/docs/Web/Events/input
      */
-    onInputKeyup: function (event) {
+    onInputKeyup: function onInputKeyup(event) {
       console.dir(event);
-      var $input = $(event.currentTarget);
-      var $td = $input.parents('td');
+      var input = event.currentTarget; // HTMLInputElement
+      var $td = input.parents('td');
 
-      if (event.which === 13) { // enter
+      if (event.key === 13) { // enter
         event.preventDefault();
 
-        var content = $.trim($input.val());
-        this.saveTranslation($input.attr('data-id'), $input.attr('lang'), content, $td);
+        var content = $.trim(input.val());
+        var data = {
+          id: input.getAttribute('data-id'),
+          lang: input.getAttribute('lang'),
+          content: content
+        };
+        this.saveTranslation(data, $td);
       }
-      else if (event.which === 27) { // esc
+      else if (event.key === 27) { // esc
         // TODO: remove keyup listener if seems hanging...
         $td.remove('.form');
-        $td.text($td.attr('data-original'));
-        $td.attr('data-original', null);
+        $td.textContent = $td.getAttribute('data-original');
+        $td.getAttribute('data-original', null);
       }
     },
 
     /**
      * Save the given translation to the PO file
+     *
+     * @param {object} data
+     * @param {HTMLTableCellElement} cell
+     * @returns {void}
+     * @see https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCellElement
      */
-    saveTranslation: function (id, lang, content, $td) {
-
-      var data = {
-        id: id,
-        lang: lang,
-        content: content
-      };
+    saveTranslation: function saveTranslation(data, cell) {
       request.post('/save-translation').send(data).end(function(error, res) {
         // TODO: Perhaps should check what is the level of success?
-        $td.remove('.form');
-        $td.text(content);
-
+        cell.remove('.form');
+        cell.textContent = data.content;
       });
     },
 
     /**
      * Gets initial data from back end and creates the table
+     * @returns {void}
      */
-    fetchInitialData: function () {
+    fetchInitialData: function fetchInitialData() {
       request.get('/initial-data', function(res) {
-        var header = $('#tmpl_table_header');
-        var row = $('#tmpl_table_row');
-        var hH = Hogan.compile(header.html());
-        var rH = Hogan.compile(row.html());
+        var header = doc.querySelector('#tmpl_table_header');
+        var row = doc.querySelector('#tmpl_table_row');
+        var hH = Hogan.compile(header.innerHTML);
+        var rH = Hogan.compile(row.innerHTML);
 
         console.log(row);
-        console.log(row.html());
+        console.log(row.innerHTML);
 
-        $('thead').html(hH.render({ languages: res.body.languages }));
-        $('tbody').html(rH.render({ translations: res.body.translations }));
+        doc.querySelector('thead').innerHTML = hH.render({ languages: res.body.languages });
+        doc.querySelector('tbody').innerHTML = rH.render({ translations: res.body.translations });
       });
     }
 
   };
 
-  $('button').on('click', function (event) {
+  doc.querySelector('button').addEventListener('click', function (event) {
     event.preventDefault();
     console.log('Clicked. Now what?');
   });
 
   Matsumura.fetchInitialData();
 
-}());
+}(document));

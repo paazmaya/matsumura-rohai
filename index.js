@@ -10,7 +10,7 @@ var util = require('util');
 // https://github.com/chevex/yargs
 var yargs = require('yargs');
 
-var pkg = (function (filename) {
+var pkg = (function jsonFileRead(filename) {
   if (!fs.existsSync(filename)) {
     return false;
   }
@@ -61,7 +61,7 @@ else if (args._.indexOf('serve') !== -1) {
   }
   global.api_key = args.key;
   global.api_secret = args.secret;
-  
+
   // Start Express server
   var server = require('./lib/server.js');
   var port = args.port || defaultPort;
