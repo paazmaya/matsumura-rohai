@@ -9,6 +9,24 @@
  * @see https://developer.mozilla.org/en-US/docs/Web/API/document
  */
 (function (doc) {
+
+  /**
+   * Helper method for replacing jQuery().parents()
+   * @param el
+   * @param matchSelector
+   * @returns {*}
+   * @see https://gist.github.com/vfalconi/2714902f0d1c02ca42f2
+   */
+  function getParents (el, matchSelector) {
+    var parent = el.parentNode;
+    if ((el.matches || el.matchesSelector || el.msMatchesSelector || el.mozMatchesSelector || el.webkitMatchesSelector || el.oMatchesSelector).call(parent, matchSelector)) {
+      return parent;
+    }
+    else {
+      return getParents(parent, matchSelector);
+    }
+  }
+
   var Matsumura = {
 
     /**
@@ -23,7 +41,7 @@
       var text = (elem.textContent || '').trim();
 
       var lang = elem.getAttribute('data-lang');
-      var id = elem.parents('tr').getAttribute('data-id');
+      var id = getParents(elem, 'tr').getAttribute('data-id');
 
       // insert input which is removed once its data has been sent via enter key
       var tmpl = doc.querySelector('#text_input');
@@ -48,24 +66,26 @@
     onInputKeyup: function onInputKeyup(event) {
       console.dir(event);
       var input = event.currentTarget; // HTMLInputElement
-      var $td = input.parents('td');
+      var td = getParents(input, 'td');
 
       if (event.key === 13) { // enter
         event.preventDefault();
 
-        var content = $.trim(input.val());
+        var content = String.prototype.trim.apply(input.value);
         var data = {
           id: input.getAttribute('data-id'),
           lang: input.getAttribute('lang'),
           content: content
         };
-        this.saveTranslation(data, $td);
+        this.saveTranslation(data, td);
       }
       else if (event.key === 27) { // esc
-        // TODO: remove keyup listener if seems hanging...
-        $td.remove('.form');
-        $td.textContent = $td.getAttribute('data-original');
-        $td.getAttribute('data-original', null);
+        input.removeEventListener('keyup', onInputKeyup);
+
+        var forms = document.getElementsByClassName('form');
+        td.removeChild(forms);
+        td.textContent = td.getAttribute('data-original');
+        td.getAttribute('data-original', null);
       }
     },
 
@@ -80,7 +100,8 @@
     saveTranslation: function saveTranslation(data, cell) {
       request.post('/save-translation').send(data).end(function(error, res) {
         // TODO: Perhaps should check what is the level of success?
-        cell.remove('.form');
+        var forms = document.getElementsByClassName('form');
+        cell.removeChild(forms);
         cell.textContent = data.content;
       });
     },
