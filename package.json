@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Translate PO files with the help of Microsoft Translate API",
   "homepage": "https://github.com/paazmaya/matsumura-rohai",
-  "main": "index.js",
+  "main": "lib/cli.js",
   "scripts": {
     "test": "mocha --ui tdd"
   },
