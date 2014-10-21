@@ -1,0 +1,69 @@
+<h1>server.js</h1>
+<pre><code class="lang-js"><span class="comment">/**
+ * Matsumura Rohai
+ * Translate PO files with the help of Microsoft Translate API
+ */</span>
+<span class="string">'use strict'</span>;
+
+<span class="keyword">var</span> express = require(<span class="string">'express'</span>);
+<span class="keyword">var</span> morgan = require(<span class="string">'morgan'</span>); <span class="comment">// logger</span>
+<span class="keyword">var</span> bodyParser = require(<span class="string">'body-parser'</span>);
+<span class="keyword">var</span> serveStatic = require(<span class="string">'serve-static'</span>);
+
+<span class="keyword">var</span> translator = require(<span class="string">'./translator'</span>);
+
+translator.init();
+
+<span class="keyword">var</span> app = express();
+app.use(morgan(<span class="string">'tiny'</span>));
+app.use(bodyParser());
+app.use(serveStatic(__dirname + <span class="string">'/../static'</span>, {maxAge: <span class="number">1000</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span> * <span class="number">7</span>})); <span class="comment">// A week in milliseconds</span>
+
+app.post(<span class="string">'/translate'</span>, <span class="keyword">function</span>(req, res) {
+  <span class="keyword">var</span> from = req.param(<span class="string">'from'</span>);
+  <span class="keyword">var</span> to = req.param(<span class="string">'to'</span>);
+  <span class="keyword">var</span> content = req.param(<span class="string">'content'</span>);
+
+  res.set(<span class="string">'Content-Type'</span>, <span class="string">'application/json'</span>);
+  translator.translate(from, to, content, <span class="function"><span class="keyword">function</span> <span class="params">(translated)</span> {</span>
+    res.send(JSON.stringify({translated: translated}));
+  });
+});
+
+app.post(<span class="string">'/save-translation'</span>, <span class="keyword">function</span>(req, res) {
+  res.send(JSON.stringify({hello: <span class="string">'world'</span>}));
+});
+
+<span class="comment">// ID could be SHA1 of the Engineering English version, thus one word.</span>
+
+<span class="keyword">var</span> initialData = {
+  languages: [
+    {
+      lang: <span class="string">'en'</span>,
+      values: <span class="number">4</span>
+    }
+  ],
+  translations: [
+    {
+      id: <span class="string">'aeiou12345658'</span>,
+      texts: [
+        {
+          lang: <span class="string">'en'</span>,
+          text: <span class="string">''</span>
+        },
+        {
+          lang: <span class="string">'fi'</span>,
+          text: <span class="string">''</span>
+        }
+      ]
+    }
+  ]
+};
+
+app.get(<span class="string">'/initial-data'</span>, <span class="keyword">function</span>(req, res) {
+  res.set(<span class="string">'Content-Type'</span>, <span class="string">'application/json'</span>);
+  res.send(JSON.stringify(initialData));
+});
+
+module.exports = app;
+</code></pre>

@@ -1,0 +1,72 @@
+<h1>cli.js</h1>
+<pre><code class="lang-js"><span class="comment">/**
+ * Matsumura Rohai
+ * Translate PO files with the help of Microsoft Translate API
+ */</span>
+<span class="string">'use strict'</span>;
+
+
+<span class="keyword">var</span> fs = require(<span class="string">'fs'</span>);
+<span class="keyword">var</span> util = require(<span class="string">'util'</span>);
+
+<span class="comment">// https://github.com/chevex/yargs</span>
+<span class="keyword">var</span> yargs = require(<span class="string">'yargs'</span>);
+
+<span class="keyword">var</span> pkg = (<span class="function"><span class="keyword">function</span> <span class="title">jsonFileRead</span><span class="params">(filename)</span> {</span>
+  <span class="keyword">if</span> (!fs.existsSync(filename)) {
+    <span class="keyword">return</span> <span class="literal">false</span>;
+  }
+  <span class="keyword">var</span> data = fs.readFileSync(filename, {encoding: <span class="string">'utf8'</span>});
+  <span class="comment">// TODO: error checking, file exists...</span>
+  <span class="keyword">return</span> JSON.parse(data);
+}(<span class="string">'../package.json'</span>));
+
+<span class="keyword">if</span> (pkg === <span class="literal">false</span>) {
+  util.error(<span class="string">'Could not read package.json'</span>);
+  process.exit(-<span class="number">1</span>);
+}
+
+<span class="keyword">var</span> ver = <span class="string">'v'</span> + pkg.version + <span class="string">' - '</span> + pkg.author.name +
+  <span class="string">' &lt;'</span> + pkg.author.email + <span class="string">'> - Licensed under '</span> +
+  pkg.licenses.shift().type + <span class="string">' license'</span>;
+
+<span class="keyword">var</span> defaultPort = <span class="number">3000</span>;
+
+<span class="comment">// Skip first two arguments since they are `node` and the this script filename.</span>
+<span class="keyword">var</span> args = yargs.usage(pkg.name + <span class="string">' - '</span> + pkg.description)
+  .alias(<span class="string">'version'</span>, <span class="string">'V'</span>)
+  .version(ver, <span class="string">'version'</span>, <span class="string">'Show version, license and copyright information'</span>)
+  .alias(<span class="string">'help'</span>, <span class="string">'h'</span>)
+  .help(<span class="string">'help'</span>, <span class="string">'Ummm....'</span>)
+  .showHelpOnFail(<span class="literal">true</span>, <span class="string">'Lost you is.'</span>)
+  .describe(<span class="string">'license'</span>, <span class="string">'Show complete license information'</span>)
+  .alias(<span class="string">'port'</span>, <span class="string">'p'</span>)
+  .describe(<span class="string">'port'</span>, <span class="string">'Port in which the local server will be started, defaults to '</span> + defaultPort)
+  .alias(<span class="string">'key'</span>, <span class="string">'k'</span>)
+  .describe(<span class="string">'key'</span>, <span class="string">'Microsoft Translate API key'</span>)
+  .alias(<span class="string">'secret'</span>, <span class="string">'s'</span>)
+  .describe(<span class="string">'secret'</span>, <span class="string">'Microsoft Translate API secret'</span>)
+  .usage(<span class="string">'Use example: node index.js serve --key 24242445 --secret 3523552'</span>)
+  .argv;
+
+util.log(util.inspect(args));
+
+
+<span class="keyword">if</span> (args.license) {
+  <span class="keyword">var</span> license = fs.readFileSync(<span class="string">'LICENSE-MIT'</span>);
+  util.puts(license);
+}
+<span class="keyword">else</span> <span class="keyword">if</span> (args._.indexOf(<span class="string">'serve'</span>) !== -<span class="number">1</span>) {
+  <span class="keyword">if</span> (!args.key || !args.secret || <span class="keyword">typeof</span> args.key !== <span class="string">'string'</span> || <span class="keyword">typeof</span> args.secret !== <span class="string">'string'</span>) {
+    util.error(<span class="string">'Microsoft Translate API key/secret were not defined'</span>);
+    process.exit(-<span class="number">1</span>);
+  }
+  global.api_key = args.key;
+  global.api_secret = args.secret;
+
+  <span class="comment">// Start Express server</span>
+  <span class="keyword">var</span> server = require(<span class="string">'./server.js'</span>);
+  <span class="keyword">var</span> port = args.port || defaultPort;
+  server.listen(port);
+}
+</code></pre>
