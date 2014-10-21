@@ -42,6 +42,8 @@ node index.js
 
 [![Initial plan sketch](https://raw.github.com/paazmaya/matsumura-rohai/master/initial-plan-thumb.jpg)](https://raw.github.com/paazmaya/matsumura-rohai/master/initial-plan.jpg)
 
+Visualisation of the project dependencies is available at 
+[paazmaya.github.io/matsumura-rohai](http://paazmaya.github.io/matsumura-rohai/ "Matsumura Rohai visualisation").
 
 ## License
 
