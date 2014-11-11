@@ -2,6 +2,8 @@
 
 > Translate strings found in PO files
 
+[![wercker status](https://app.wercker.com/status/9800cce527c94842b78ad1d4c338f66b/s "wercker status")](https://app.wercker.com/project/bykey/9800cce527c94842b78ad1d4c338f66b)
+
 The name for this project is honouring one great [bushi, Matsumura 
 Sokon](http://en.wikipedia.org/wiki/Matsumura_S%C5%8Dkon), who lived 
 in Okinawa, Japan, and a [Karate Kata](http://en.wikipedia.org/wiki/Karate_kata) named after him.
