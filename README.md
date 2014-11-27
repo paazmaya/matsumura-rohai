@@ -2,15 +2,15 @@
 
 > Translate strings found in PO files
 
-[![wercker status](https://app.wercker.com/status/9800cce527c94842b78ad1d4c338f66b/s "wercker status")](https://app.wercker.com/project/bykey/9800cce527c94842b78ad1d4c338f66b)
+[![wercker status](https://img.shields.io/wercker/ci/9800cce527c94842b78ad1d4c338f66b.svg?style=flat-square "wercker status")](https://app.wercker.com/project/bykey/9800cce527c94842b78ad1d4c338f66b)
 
-The name for this project is honouring one great [bushi, Matsumura 
-Sokon](http://en.wikipedia.org/wiki/Matsumura_S%C5%8Dkon), who lived 
+The name for this project is honouring one great [bushi, Matsumura
+Sokon](http://en.wikipedia.org/wiki/Matsumura_S%C5%8Dkon), who lived
 in Okinawa, Japan, and a [Karate Kata](http://en.wikipedia.org/wiki/Karate_kata) named after him.
 
-Matsumura Sokon lived around ~1800 and was one very important contributor 
+Matsumura Sokon lived around ~1800 and was one very important contributor
 to the local martial art, which we today know as Karate and Ryukyu Kobujutsu.
-The kata named after him is called _Matsumura Rohai_, also known 
+The kata named after him is called _Matsumura Rohai_, also known
 as _Koshiki Rohai_ or _Matsumura no Rohai_, depending on who is writing it.
 
 
@@ -44,7 +44,7 @@ node index.js
 
 [![Initial plan sketch](https://raw.github.com/paazmaya/matsumura-rohai/master/initial-plan-thumb.jpg)](https://raw.github.com/paazmaya/matsumura-rohai/master/initial-plan.jpg)
 
-Visualisation of the project dependencies is available at 
+Visualisation of the project dependencies is available at
 [paazmaya.github.io/matsumura-rohai](http://paazmaya.github.io/matsumura-rohai/ "Matsumura Rohai visualisation").
 
 ## License
