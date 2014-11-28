@@ -5,7 +5,7 @@
   "homepage": "https://github.com/paazmaya/matsumura-rohai",
   "main": "lib/cli.js",
   "scripts": {
-    "test": "mocha --ui tdd"
+    "test": "mocha --ui tdd tests/mocha"
   },
   "keywords": [
     "translation",
