@@ -3,6 +3,7 @@
 > Translate strings found in PO files
 
 [![wercker status](https://img.shields.io/wercker/ci/9800cce527c94842b78ad1d4c338f66b.svg?style=flat-square "wercker status")](https://app.wercker.com/project/bykey/9800cce527c94842b78ad1d4c338f66b)
+[![Analytics](https://ga-beacon.appspot.com/UA-2643697-15/matsumura-rohai/index)](https://github.com/igrigorik/ga-beacon)
 
 The name for this project is honouring one great [bushi, Matsumura
 Sokon](http://en.wikipedia.org/wiki/Matsumura_S%C5%8Dkon), who lived
