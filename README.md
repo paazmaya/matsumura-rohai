@@ -48,6 +48,10 @@ node index.js
 Visualisation of the project dependencies is available at
 [paazmaya.github.io/matsumura-rohai](http://paazmaya.github.io/matsumura-rohai/ "Matsumura Rohai visualisation").
 
+## Contributing
+
+[Please refer to a GitHub blog post on how to create somewhat perfect pull request.](https://github.com/blog/1943-how-to-write-the-perfect-pull-request "How to write the perfect pull request")
+
 ## License
 
 Copyright (c) [Juga Paazmaya](http://paazmaya.com)
