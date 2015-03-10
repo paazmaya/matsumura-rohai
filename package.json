@@ -22,6 +22,13 @@
     "type": "git",
     "url": "git://github.com/paazmaya/matsumura-rohai.git"
   },
+  "files": [
+    "LICENSE-MIT",
+    "bin",
+    "lib",
+    "static",
+    "README.md"
+  ],
   "bugs": {
     "url": "https://github.com/paazmaya/matsumura-rohai/issues"
   },
