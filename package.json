@@ -51,14 +51,14 @@
     "body-parser": "~1.12",
     "express": "~4.12",
     "morgan": "~1.5",
-    "mstranslator": "~1.1",
+    "mstranslator": "~2.0",
     "node-gettext": "~1.0",
     "serve-static": "~1.9",
-    "yargs": "~3.7"
+    "yargs": "~3.8"
   },
   "devDependencies": {
     "gulp": "~3.8",
-    "gulp-eslint": "~0.5",
+    "gulp-eslint": "~0.11",
     "gulp-mocha": "~2.0",
     "gulp-nodeunit-runner": "~0.2",
     "mocha": "~2.2"
