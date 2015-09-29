@@ -15,15 +15,15 @@
   ],
   "author": {
     "name": "Juga Paazmaya",
-    "email": "olavic@gmail.com",
-    "url": "http://paazmaya.com"
+    "email": "paazmaya@yahoo.com",
+    "url": "http://paazmaya.divshot.io"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/paazmaya/matsumura-rohai.git"
   },
   "files": [
-    "LICENSE-MIT",
+    "LICENSE",
     "bin",
     "lib",
     "static",
@@ -32,12 +32,7 @@
   "bugs": {
     "url": "https://github.com/paazmaya/matsumura-rohai/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/paazmaya/matsumura-rohai/blob/master/LICENSE-MIT"
-    }
-  ],
+  "license": "MIT",
   "testling": {
     "harness": "mocha-tdd",
     "files": "tests/mocha/*_spec.js",
@@ -48,13 +43,13 @@
     ]
   },
   "dependencies": {
-    "body-parser": "~1.13",
+    "body-parser": "~1.14",
     "express": "~4.13",
     "morgan": "~1.6",
     "mstranslator": "~2.0",
     "node-gettext": "~1.0",
     "serve-static": "~1.10",
-    "yargs": "~3.23"
+    "yargs": "~3.26"
   },
   "devDependencies": {
     "gulp": "~3.9",
