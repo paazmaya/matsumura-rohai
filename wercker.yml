@@ -3,6 +3,10 @@ box: wercker/nodejs
 build:
   # The steps that will be executed on build
   steps:
+    - script:
+        name: Install Node.js 4
+        code: nvm install 4
+
     # A step that executes `npm install` command
     - npm-install
     # A step that executes `npm test` command
