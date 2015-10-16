@@ -52,7 +52,7 @@
     "mstranslator": "~2.0",
     "node-gettext": "~1.0",
     "serve-static": "~1.10",
-    "yargs": "~3.26"
+    "yargs": "~3.27"
   },
   "devDependencies": {
     "gulp": "~3.9",
