@@ -4,16 +4,16 @@
  */
 'use strict';
 
-var gulp = require('gulp');
+const gulp = require('gulp');
 
 // https://github.com/adametry/gulp-eslint
-var eslint = require('gulp-eslint');
+const eslint = require('gulp-eslint');
 
 // https://github.com/baer/gulp-nodeunit-runner
-var nodeunitRunner = require('gulp-nodeunit-runner');
+const nodeunitRunner = require('gulp-nodeunit-runner');
 
 // https://github.com/sindresorhus/gulp-mocha
-var mocha = require('gulp-mocha');
+const mocha = require('gulp-mocha');
 
 gulp.task('lint', function () {
   gulp.src(['*.js', 'lib/*.js', 'static/js/bunkai-kumite.js', '!node_modules/**'])

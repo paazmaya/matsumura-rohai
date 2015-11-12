@@ -54,6 +54,6 @@ Visualisation of the project dependencies is available at
 
 ## License
 
-Copyright (c) [Juga Paazmaya](http://paazmaya.fi)
+Copyright (c) [Juga Paazmaya <paazmaya@yahoo.com>](http://paazmaya.fi)
 
 Licensed under the [MIT license](https://github.com/paazmaya/matsumura-rohai/blob/master/LICENSE-MIT).

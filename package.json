@@ -5,7 +5,8 @@
   "homepage": "https://github.com/paazmaya/matsumura-rohai",
   "main": "lib/cli.js",
   "scripts": {
-    "test": "mocha --ui tdd tests/mocha"
+    "test": "mocha --ui tdd tests/mocha",
+    "lint": "gulp lint"
   },
   "keywords": [
     "translation",
@@ -33,7 +34,7 @@
     "url": "https://github.com/paazmaya/matsumura-rohai/issues"
   },
   "engines": {
-    "node": ">=0.12.0"
+    "node": ">=4.2.0"
   },
   "license": "MIT",
   "testling": {
