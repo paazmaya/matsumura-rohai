@@ -1,17 +1,8 @@
-box: wercker/nodejs
+box: node:slim
 # Build definition
 build:
   # The steps that will be executed on build
   steps:
-    - script:
-        name: Install Node.js 4
-        code: nvm install 4
-
-    # A step that executes `npm install` command
-    - npm-install
-    # A step that executes `npm test` command
-    - npm-test
-
     # A custom script step, name value is used in the UI
     # and the code value contains the command that get executed
     - script:
@@ -19,3 +10,9 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
+
+
+    # A step that executes `npm install` command
+    - npm-install
+    # A step that executes `npm test` command
+    - npm-test
