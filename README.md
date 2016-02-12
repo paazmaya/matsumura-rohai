@@ -5,6 +5,8 @@
 [![wercker status](https://img.shields.io/wercker/ci/9800cce527c94842b78ad1d4c338f66b.svg?style=flat-square "wercker status")](https://app.wercker.com/project/bykey/9800cce527c94842b78ad1d4c338f66b)
 [![Analytics](https://ga-beacon.appspot.com/UA-2643697-15/matsumura-rohai/index?flat)](https://github.com/igrigorik/ga-beacon)
 
+## Background for the project name
+
 The name for this project is honouring one great [bushi, Matsumura
 Sokon](http://en.wikipedia.org/wiki/Matsumura_S%C5%8Dkon), who lived
 in Okinawa, Japan, and a [Karate Kata](http://en.wikipedia.org/wiki/Karate_kata) named after him.
@@ -14,10 +16,15 @@ to the local martial art, which we today know as Karate and Ryukyu Kobujutsu.
 The kata named after him is called _Matsumura Rohai_, also known
 as _Koshiki Rohai_ or _Matsumura no Rohai_, depending on who is writing it.
 
+## Getting started
+
+The project provides a Node.js based server and a front-end for modifying translations.
+The back-end makes requests to the Microsoft Translate API and caches the received translations
+to a SQLite database.
 
 ## Installation
 
-While in Windows, different versions of Visual Studio might be problemativc, thus failing `iconv` installation.
+While in Windows, different versions of Visual Studio might be problematic, thus failing `iconv` installation.
 With different options to `--msvs_version`, one might succeed. Such options are `auto`, `2010`, `2012` and so forth.
 
 ```sh
@@ -54,6 +61,6 @@ Visualisation of the project dependencies is available at
 
 ## License
 
-Copyright (c) [Juga Paazmaya <paazmaya@yahoo.com>](http://paazmaya.fi)
+Copyright (c) [Juga Paazmaya](http://www.paazmaya.fi) <paazmaya@yahoo.com>
 
-Licensed under the [MIT license](https://github.com/paazmaya/matsumura-rohai/blob/master/LICENSE-MIT).
+Licensed under the [MIT license](LICENSE).

@@ -15,16 +15,16 @@ const nodeunitRunner = require('gulp-nodeunit-runner');
 // https://github.com/sindresorhus/gulp-mocha
 const mocha = require('gulp-mocha');
 
-gulp.task('lint', function () {
-  gulp.src(['*.js', 'lib/*.js', 'static/js/bunkai-kumite.js', '!node_modules/**'])
+gulp.task('lint', () => {
+  return gulp.src(['*.js', 'lib/*.js', 'static/js/bunkai-kumite.js', '!node_modules/**'])
     .pipe(eslint())
     .pipe(eslint.format('stylish'));
 });
 
-gulp.task('test', function () {
+gulp.task('test', () => {
   gulp.src(['tests/nodeunit/*_spec.js'])
     .pipe(nodeunitRunner({reporter: 'default'}));
 
-  gulp.src(['tests/mocha/*_spec.js'], {read: false})
+  return gulp.src(['tests/mocha/*_spec.js'], {read: false})
     .pipe(mocha({reporter: 'nyan'}));
 });

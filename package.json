@@ -17,7 +17,7 @@
   "author": {
     "name": "Juga Paazmaya",
     "email": "paazmaya@yahoo.com",
-    "url": "http://paazmaya.fi"
+    "url": "http://www.paazmaya.fi"
   },
   "repository": {
     "type": "git",
@@ -47,19 +47,20 @@
     ]
   },
   "dependencies": {
-    "body-parser": "~1.14",
+    "body-parser": "~1.15",
     "express": "~4.13",
     "morgan": "~1.6",
     "mstranslator": "~2.0",
     "node-gettext": "~1.0",
     "serve-static": "~1.10",
-    "yargs": "~3.27"
+    "sqlite3": "^3.1.1",
+    "yargs": "~3.32"
   },
   "devDependencies": {
     "gulp": "~3.9",
-    "gulp-eslint": "~1.0",
-    "gulp-mocha": "~2.1",
+    "gulp-eslint": "~1.1",
+    "gulp-mocha": "~2.2",
     "gulp-nodeunit-runner": "~0.2",
-    "mocha": "~2.3"
+    "mocha": "~2.4"
   }
 }
