@@ -54,7 +54,7 @@
     "node-gettext": "~1.0",
     "serve-static": "~1.10",
     "sqlite3": "^3.1.1",
-    "yargs": "~3.32"
+    "yargs": "~4.1"
   },
   "devDependencies": {
     "gulp": "~3.9",
