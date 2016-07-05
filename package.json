@@ -59,7 +59,7 @@
   "devDependencies": {
     "gulp": "~3.9",
     "gulp-eslint": "~3.0",
-    "eslint-config-paazmaya": "~2.1",
+    "eslint-config-paazmaya": "~2.2",
     "gulp-mocha": "~2.2",
     "gulp-nodeunit-runner": "~0.2",
     "mocha": "~2.5"
