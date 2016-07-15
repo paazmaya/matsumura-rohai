@@ -54,12 +54,12 @@
     "node-gettext": "~1.1",
     "serve-static": "~1.11",
     "sqlite3": "^3.1.4",
-    "yargs": "~4.7"
+    "yargs": "~4.8"
   },
   "devDependencies": {
     "gulp": "~3.9",
     "gulp-eslint": "~3.0",
-    "eslint-config-paazmaya": "~2.2",
+    "eslint-config-paazmaya": "~2.3",
     "gulp-mocha": "~2.2",
     "gulp-nodeunit-runner": "~0.2",
     "mocha": "~2.5"
