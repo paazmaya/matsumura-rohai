@@ -60,8 +60,8 @@
     "gulp": "~3.9",
     "gulp-eslint": "~3.0",
     "eslint-config-paazmaya": "~2.3",
-    "gulp-mocha": "~2.2",
+    "gulp-mocha": "~3.0",
     "gulp-nodeunit-runner": "~0.2",
-    "mocha": "~2.5"
+    "mocha": "~3.0"
   }
 }
