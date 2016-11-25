@@ -50,18 +50,18 @@
     "body-parser": "~1.15",
     "express": "~4.14",
     "morgan": "~1.7",
-    "mstranslator": "~2.0",
+    "mstranslator": "~2.1",
     "node-gettext": "~1.1",
     "serve-static": "~1.11",
     "sqlite3": "^3.1.8",
-    "yargs": "~6.3"
+    "yargs": "~6.4"
   },
   "devDependencies": {
     "gulp": "~3.9",
     "gulp-eslint": "~3.0",
-    "eslint-config-paazmaya": "~3.0",
+    "eslint-config-paazmaya": "~3.1",
     "gulp-mocha": "~3.0",
     "gulp-nodeunit-runner": "~0.2",
-    "mocha": "~3.1"
+    "mocha": "~3.2"
   }
 }
