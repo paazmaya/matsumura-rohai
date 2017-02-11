@@ -34,7 +34,7 @@
     "url": "https://github.com/paazmaya/matsumura-rohai/issues"
   },
   "engines": {
-    "node": ">=4.2.0"
+    "node": ">=6.9.5"
   },
   "license": "MIT",
   "testling": {
