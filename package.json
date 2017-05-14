@@ -4,6 +4,9 @@
   "description": "Translate PO files with the help of Microsoft Translate API",
   "homepage": "https://github.com/paazmaya/matsumura-rohai",
   "main": "lib/cli.js",
+  "bin": {
+    "matsumura-rohai": "bin/matsumura-rohai.js"
+  },
   "scripts": {
     "test": "mocha --ui tdd tests/mocha",
     "lint": "gulp lint"
@@ -37,15 +40,6 @@
     "node": ">=6.9.5"
   },
   "license": "MIT",
-  "testling": {
-    "harness": "mocha-tdd",
-    "files": "tests/mocha/*_spec.js",
-    "browsers": [
-      "ie/8..latest",
-      "chrome/latest",
-      "firefox/latest"
-    ]
-  },
   "dependencies": {
     "body-parser": "~1.17.1",
     "express": "~4.15.2",
