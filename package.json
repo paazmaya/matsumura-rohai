@@ -9,7 +9,9 @@
   },
   "scripts": {
     "test": "mocha --ui tdd tests/mocha",
-    "lint": "gulp lint"
+    "lint": "gulp lint",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "translation",
@@ -48,7 +50,8 @@
     "node-gettext": "~2.0",
     "serve-static": "~1.12",
     "sqlite3": "^3.1.8",
-    "yargs": "~8.0"
+    "yargs": "~8.0",
+    "snyk": "^1.30.1"
   },
   "devDependencies": {
     "gulp": "~3.9",
@@ -57,5 +60,6 @@
     "gulp-mocha": "~4.3",
     "gulp-nodeunit-runner": "~0.2",
     "mocha": "~3.3"
-  }
+  },
+  "snyk": true
 }
