@@ -44,22 +44,22 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "~1.17.2",
-    "express": "~4.15.3",
+    "express": "~4.15.4",
     "morgan": "~1.8",
     "mstranslator": "~3.0",
     "node-gettext": "~2.0",
     "serve-static": "~1.12",
-    "sqlite3": "^3.1.8",
+    "sqlite3": "^3.1.9",
     "yargs": "~8.0",
-    "snyk": "^1.36.2"
+    "snyk": "^1.38.1"
   },
   "devDependencies": {
     "gulp": "~3.9",
     "gulp-eslint": "~4.0",
-    "eslint-config-paazmaya": "~4.0",
+    "eslint-config-paazmaya": "~4.1",
     "gulp-mocha": "~4.3",
     "gulp-nodeunit-runner": "~0.2",
-    "mocha": "~3.4"
+    "mocha": "~3.5"
   },
   "snyk": true
 }
