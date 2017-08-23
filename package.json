@@ -51,7 +51,7 @@
     "serve-static": "~1.12",
     "sqlite3": "^3.1.9",
     "yargs": "~8.0",
-    "snyk": "^1.38.1"
+    "snyk": "^1.40.0"
   },
   "devDependencies": {
     "gulp": "~3.9",
