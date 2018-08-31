@@ -23,8 +23,13 @@ gulp.task('lint', () => {
 
 gulp.task('test', () => {
   gulp.src(['tests/nodeunit/*_spec.js'])
-    .pipe(nodeunitRunner({reporter: 'default'}));
+    .pipe(nodeunitRunner({
+      reporter: 'default'
+    }));
 
-  return gulp.src(['tests/mocha/*_spec.js'], {read: false})
-    .pipe(mocha({reporter: 'nyan'}));
+  return gulp.src(['tests/mocha/*_spec.js'], {
+    read: false
+  }).pipe(mocha({
+    reporter: 'nyan'
+  }));
 });

@@ -22,9 +22,8 @@
     if ((el.matches || el.matchesSelector || el.msMatchesSelector || el.mozMatchesSelector || el.webkitMatchesSelector || el.oMatchesSelector).call(parent, matchSelector)) {
       return parent;
     }
-    else {
-      return getParents(parent, matchSelector);
-    }
+
+    return getParents(parent, matchSelector);  
   }
 
   var Matsumura = {
@@ -120,8 +119,12 @@
         console.log(row);
         console.log(row.innerHTML);
 
-        doc.querySelector('thead').innerHTML = hH.render({ languages: res.body.languages });
-        doc.querySelector('tbody').innerHTML = rH.render({ translations: res.body.translations });
+        doc.querySelector('thead').innerHTML = hH.render({
+          languages: res.body.languages
+        });
+        doc.querySelector('tbody').innerHTML = rH.render({
+          translations: res.body.translations
+        });
       });
     }
 
@@ -134,4 +137,4 @@
 
   Matsumura.fetchInitialData();
 
-}(document));
+})(document);
