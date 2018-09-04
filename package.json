@@ -11,7 +11,8 @@
     "test": "mocha --ui tdd tests/mocha",
     "lint": "gulp lint",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "npm run snyk-protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [
     "translation",
@@ -54,7 +55,7 @@
     "snyk": "^1.94.0"
   },
   "devDependencies": {
-    "gulp": "~3.9",
+    "gulp": "~4.0.0",
     "gulp-eslint": "~5.0",
     "eslint-config-paazmaya": "~5.0",
     "gulp-mocha": "~6.0",
