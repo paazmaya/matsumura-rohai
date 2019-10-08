@@ -50,7 +50,7 @@
     "mstranslator": "~3.0",
     "node-gettext": "~2.0",
     "serve-static": "~1.14.1",
-    "snyk": "^1.228.3",
+    "snyk": "^1.232.0",
     "sqlite3": "^4.0.8",
     "yargs": "~13.2"
   },
