@@ -31,7 +31,7 @@ With different options to `--msvs_version`, one might succeed. Such options are 
 npm install --msvs_version=2012
 ```
 
-Please note that the minimum supported version of [Node.js](https://nodejs.org/en/) is `8.11.1`, which is [the active Long Term Support (LTS) version](https://github.com/nodejs/Release#release-schedule).
+Please note that the minimum supported version of [Node.js](https://nodejs.org/en/) is `10.13.0`, which is [the active Long Term Support (LTS) version](https://github.com/nodejs/Release#release-schedule).
 
 ## Usage
 
