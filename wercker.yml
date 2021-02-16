@@ -1,4 +1,4 @@
-box: node:10.13
+box: node:14.15
 build:
   steps:
     - script:
