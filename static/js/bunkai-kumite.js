@@ -18,15 +18,15 @@
    * @see https://gist.github.com/vfalconi/2714902f0d1c02ca42f2
    */
   function getParents (el, matchSelector) {
-    var parent = el.parentNode;
+    const parent = el.parentNode;
     if ((el.matches || el.matchesSelector || el.msMatchesSelector || el.mozMatchesSelector || el.webkitMatchesSelector || el.oMatchesSelector).call(parent, matchSelector)) {
       return parent;
     }
 
-    return getParents(parent, matchSelector);  
+    return getParents(parent, matchSelector);
   }
 
-  var Matsumura = {
+  const Matsumura = {
 
     /**
      * Create an input to a table cell if it does not already have it,
@@ -37,19 +37,23 @@
      */
     createInlineInput: function createInlineInput(elem) {
       // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
-      var text = (elem.textContent || '').trim();
+      const text = (elem.textContent || '').trim();
 
-      var lang = elem.getAttribute('data-lang');
-      var id = getParents(elem, 'tr').getAttribute('data-id');
+      const lang = elem.getAttribute('data-lang');
+      const id = getParents(elem, 'tr').getAttribute('data-id');
 
       // insert input which is removed once its data has been sent via enter key
-      var tmpl = doc.querySelector('#text_input');
-      var html = Hogan.compile(tmpl.innerHTML, { id: id, lang: lang, text: text });
+      const tmpl = doc.querySelector('#text_input');
+      const html = Hogan.compile(tmpl.innerHTML, {
+        id: id,
+        lang: lang,
+        text: text
+      });
 
       // Send if enter key comes up later, remove if esc.
       elem.innerHTML = html;
 
-      var input = elem.querySelector('input');
+      const input = elem.querySelector('input');
       input.focus();
       input.addEventListener('keyup', this.onInputKeyup);
 
@@ -64,14 +68,14 @@
      */
     onInputKeyup: function onInputKeyup(event) {
       console.dir(event);
-      var input = event.currentTarget; // HTMLInputElement
-      var td = getParents(input, 'td');
+      const input = event.currentTarget; // HTMLInputElement
+      const td = getParents(input, 'td');
 
       if (event.key === 13) { // enter
         event.preventDefault();
 
-        var content = String.prototype.trim.apply(input.value);
-        var data = {
+        const content = String.prototype.trim.apply(input.value);
+        const data = {
           id: input.getAttribute('data-id'),
           lang: input.getAttribute('lang'),
           content: content
@@ -81,7 +85,7 @@
       else if (event.key === 27) { // esc
         input.removeEventListener('keyup', onInputKeyup);
 
-        var forms = document.getElementsByClassName('form');
+        const forms = document.getElementsByClassName('form');
         td.removeChild(forms);
         td.textContent = td.getAttribute('data-original');
         td.getAttribute('data-original', null);
@@ -99,7 +103,7 @@
     saveTranslation: function saveTranslation(data, cell) {
       request.post('/save-translation').send(data).end(function(error, res) {
         // TODO: Perhaps should check what is the level of success?
-        var forms = document.getElementsByClassName('form');
+        const forms = document.getElementsByClassName('form');
         cell.removeChild(forms);
         cell.textContent = data.content;
       });
@@ -111,10 +115,10 @@
      */
     fetchInitialData: function fetchInitialData() {
       request.get('/initial-data', function(res) {
-        var header = doc.querySelector('#tmpl_table_header');
-        var row = doc.querySelector('#tmpl_table_row');
-        var hH = Hogan.compile(header.innerHTML);
-        var rH = Hogan.compile(row.innerHTML);
+        const header = doc.querySelector('#tmpl_table_header');
+        const row = doc.querySelector('#tmpl_table_row');
+        const hH = Hogan.compile(header.innerHTML);
+        const rH = Hogan.compile(row.innerHTML);
 
         console.log(row);
         console.log(row.innerHTML);
