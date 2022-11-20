@@ -4,12 +4,13 @@
   "description": "Translate PO files with the help of Microsoft Translate API",
   "homepage": "https://github.com/paazmaya/matsumura-rohai",
   "main": "lib/cli.js",
+  "type": "module",
   "bin": {
     "matsumura-rohai": "bin/matsumura-rohai.js"
   },
   "scripts": {
     "test": "mocha --ui tdd tests/mocha",
-    "lint": "gulp lint"
+    "lint": "eslint *.js lib static/js"
   },
   "keywords": [
     "translation",
@@ -52,8 +53,8 @@
   },
   "devDependencies": {
     "gulp": "~4.0.2",
-    "gulp-eslint": "~5.0",
-    "eslint-config-paazmaya": "~5.3",
+    "eslint": "~8.28",
+    "eslint-config-paazmaya": "~9.0",
     "gulp-mocha": "~6.0",
     "gulp-nodeunit-runner": "~0.2",
     "mocha": "~6.2"
