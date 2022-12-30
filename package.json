@@ -57,6 +57,6 @@
     "eslint-config-paazmaya": "~9.0",
     "gulp-mocha": "~6.0",
     "gulp-nodeunit-runner": "~0.2",
-    "mocha": "~6.2"
+    "mocha": "~10.2"
   }
 }
