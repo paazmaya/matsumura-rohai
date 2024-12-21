@@ -15,6 +15,8 @@ to the local martial art, which we today know as Karate and Ryukyu Kobujutsu.
 The kata named after him is called _Matsumura Rohai_, also known
 as _Koshiki Rohai_ or _Matsumura no Rohai_, depending on who is writing it.
 
+[Read more about why these martial arts are important for me at `karatejukka.fi`.](https://karatejukka.fi)
+
 ## Getting started
 
 The project provides a Node.js based server and a front-end for modifying translations.
