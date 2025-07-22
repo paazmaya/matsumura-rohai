@@ -53,7 +53,7 @@
     "yargs": "~16.2.0"
   },
   "devDependencies": {
-    "gulp": "~5.0.0",
+    "gulp": "~5.0.1",
     "eslint": "~8.28",
     "eslint-config-paazmaya": "~9.0",
     "gulp-mocha": "~10.0",
