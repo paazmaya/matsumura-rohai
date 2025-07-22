@@ -43,21 +43,21 @@
   },
   "license": "MIT",
   "dependencies": {
-    "body-parser": "~1.20.3",
-    "express": "~4.21.2",
+    "body-parser": "~2.2.0",
+    "express": "~5.1.0",
     "morgan": "~1.10",
     "mstranslator": "~3.0",
-    "node-gettext": "~2.1",
-    "serve-static": "~1.16.2",
-    "sqlite3": "4.2.0",
-    "yargs": "~16.2.0"
+    "node-gettext": "~3.0",
+    "serve-static": "~2.2.0",
+    "sqlite3": "5.1.7",
+    "yargs": "~18.0.0"
   },
   "devDependencies": {
     "gulp": "~5.0.1",
-    "eslint": "~8.28",
+    "eslint": "~9.31",
     "eslint-config-paazmaya": "~9.0",
     "gulp-mocha": "~10.0",
     "gulp-nodeunit-runner": "~0.2",
-    "mocha": "~10.8"
+    "mocha": "~11.7"
   }
 }
