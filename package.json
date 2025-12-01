@@ -44,7 +44,7 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "~2.2.0",
-    "express": "~5.1.0",
+    "express": "~5.2.0",
     "morgan": "~1.10",
     "mstranslator": "~3.0",
     "node-gettext": "~3.0",
